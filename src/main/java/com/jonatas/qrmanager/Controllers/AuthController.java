@@ -1,9 +1,5 @@
-package com.jonatas.QR_manager.Controllers;
+package com.jonatas.qrmanager.Controllers;
 
-import com.jonatas.QR_manager.DTOs.LoginRequest;
-import com.jonatas.QR_manager.DTOs.RegisterRequest;
-import com.jonatas.QR_manager.Entities.User;
-import com.jonatas.QR_manager.Repositories.UserRepository;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
@@ -15,6 +11,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import com.jonatas.qrmanager.DTOs.LoginRequest;
+import com.jonatas.qrmanager.DTOs.RegisterRequest;
+import com.jonatas.qrmanager.Entities.User;
+import com.jonatas.qrmanager.Repositories.UserRepository;
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -23,7 +24,8 @@ public class AuthController {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository,
+            PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
@@ -48,10 +50,10 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+    public ResponseEntity<String> authenticateUser(@RequestBody LoginRequest loginRequest,
+            HttpServletResponse response) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
-        );
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 

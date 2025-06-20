@@ -1,4 +1,4 @@
-package com.jonatas.QR_manager.Entities;
+package com.jonatas.qrmanager.Entities;
 
 import jakarta.persistence.*;
 import java.util.Collection; // Use java.util.Collection

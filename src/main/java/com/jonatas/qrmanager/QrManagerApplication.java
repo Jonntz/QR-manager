@@ -1,4 +1,4 @@
-package com.jonatas.QR_manager;
+package com.jonatas.qrmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,12 +1,13 @@
-package com.jonatas.QR_manager.Controllers;
+package com.jonatas.qrmanager.Controllers;
 
-import com.jonatas.QR_manager.Entities.User;
-import com.jonatas.QR_manager.Repositories.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import com.jonatas.qrmanager.Entities.User;
+import com.jonatas.qrmanager.Repositories.UserRepository;
 
 @RestController
 @RequestMapping("/api/users")

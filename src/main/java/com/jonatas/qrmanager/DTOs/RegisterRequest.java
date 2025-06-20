@@ -1,4 +1,4 @@
-package com.jonatas.QR_manager.DTOs;
+package com.jonatas.qrmanager.DTOs;
 
 import lombok.Data;
 

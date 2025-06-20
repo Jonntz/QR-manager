@@ -1,10 +1,11 @@
-package com.jonatas.QR_manager.Services;
+package com.jonatas.qrmanager.Services;
 
-import com.jonatas.QR_manager.Repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.jonatas.qrmanager.Repositories.UserRepository;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
